@@ -10,11 +10,13 @@ int main() {
 
     while(totemTurnos(&colaPremium, &colaComun));
 
+    //debug
     if(!isEmpty(&colaPremium)){
         mostrarCola(&colaPremium);
     }
     if(!isEmpty(&colaComun)){
         mostrarCola(&colaComun);
     }
+    //enddebug
     return 0;
 }

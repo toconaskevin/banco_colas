@@ -35,8 +35,10 @@ STR_CLIENTE getDatosCliente() {
 }
 
 void agregarNodo(STR_COLA *cola, STR_CLIENTE cliente) {
-    STR_NODO *nodo = (STR_NODO*)(malloc(sizeof(STR_NODO)));
-
+    STR_NODO *nodo = (STR_NODO)(malloc(sizeof(STR_NODO)));
+    if(nodo == NULL){
+        exit(EXIT_FAILURE);
+    }
     nodo->cliente = cliente;
     nodo->sgte = NULL;
     if(cola->frente == NULL){
@@ -69,7 +71,10 @@ void copiarNodo(STR_COLA *cola, STR_COLA *colaPrioridad) {
 }
 
 void setColaPrioridad(STR_COLA *cola, STR_CLIENTE cliente) {
-    STR_NODO *nodo = (STR_NODO*)(malloc(sizeof(STR_NODO)));
+    STR_NODO *nodo = (STR_NODO)(malloc(sizeof(STR_NODO)));
+    if(nodo == NULL){
+        exit(EXIT_FAILURE);
+    }
     STR_COLA *aux = cola;
     crearCola(cola);
     nodo->cliente = cliente;
